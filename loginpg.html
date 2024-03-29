@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+             box-sizing:border-box;
+             }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type=text], input[type=email], input[type=tel], input[type=password] {
+            width: 100%;
+            padding: 12px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            font-size: 0.6em;
+            display:block;
+        width:100%;
+        text-align:right;
+            height:1.2em;
+        }
+        .required::before {
+            content: "*";
+            color: red;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+<body>
+        <form onsubmit="return validate()">
+            <input type="text" name="user"/>
+            <span class="error" id="errorUser"></span>
+            <input type="password" name="pass"/>
+            <span class="error" id="errorUser"></span>
+            <input type="submit" name="login"/>
+        </form>
+    <script>
+        function validate()
+        {
+            user=document.forms[0].elements['user'].value;
+            user=document.forms[0].elements['user'].value;
+            if(user.trim().length===0)
+            {
+                document.getElementById('error')
+            }
+        }
+    </script>
+</body>
+</html>

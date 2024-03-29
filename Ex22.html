@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>clock</title>
+    </head>
+    <body>
+        <div id="digiclock"></div>
+        <div id="greeting"></div>
+          <script>
+            name=prompt("enter your name");
+            digiclock=document.getElementById("digiclock")
+            greeting=document.getElementById("greeting")
+            function clock(){
+                dt=new Date();
+                hh=dt.getHours();
+                mm=dt.getMinutes();
+                ss=dt.getSeconds();
+                time=hh+":"+mm+":"+ss
+                digiclock.innerHTML=time
+                if(hh>0 && hh<12){
+                    greeting.innerHTML="good morning"+"  "+name+time;
+                }
+                else if(hh>=12 && hh<18){
+                    greeting.innerHTML="good afternoon"+"  "+name;
+                }
+                if(hh<24){
+                    greeting.innerHTML="night"+"  "+name+time;
+                }
+            }
+            
+          </script>
+    </body>
+</html>

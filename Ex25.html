@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Conv</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" name="inputV" onchange="tempconv()">
+        <select name="inputOp" onchange="tempconv()">
+            <option value="c">Celcius</option>
+            <option value="k">Kelvin</option>
+            <option value="f">Fahrenheit</option>
+        </select>
+        <input type="number" name="outputV">
+        <select name="outputOp" onchange="tempconv()">
+            <option value="c">Celcius</option>
+            <option value="k">Kelvin</option>
+            <option value="f">Fahrenheit</option>
+        </select>
+    </form>
+    <script>
+        function tempconv()
+        {
+            inputV=parseFloat(document.forms[0].elements['inputV'].value);
+            inputOp=document.forms[0].elements['inputOp'].value;
+            outputOp=document.forms[0].elements['outputOp'].value;
+            if(inputOp=='c' && outputOp=='k')
+            {
+                result=inputV+273.15;
+            }
+            else if(inputOp=='k' && outputOp=='c')
+            {
+                result=inputV-273.15;
+            }
+            else if(inputOp=='c' && outputOp=='f')
+            {
+                result=(9/5*inputV)+32;
+            }
+            else if(inputOp=='f' && outputOp=='c')
+            {
+                result=(5/9*inputV)-32;
+            }
+            else if(inputOp=='k' && outputOp=='f')
+            {
+                result1=inputV-273.15;
+                result=9/5*result1+32;
+            }
+            else if(inputOp=='f' && outputOp=='k')
+            {
+                result1=(5/9*inputV)-32;
+                result=result1+273.15;
+            }
+            else
+            {
+                result=inputV
+            }
+            document.forms[0].elements['outputV'].value=result;
+        }
+    </script>
+</body>
+</html>

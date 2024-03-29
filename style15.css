@@ -1,0 +1,16 @@
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+}
+.container{
+    display: flex;
+}
+.con1{
+    background-color: blue;
+    border: 5px solid gray;
+}
+.con2{
+    background-color: aquamarine;
+    border: 5px solid darkblue;
+    margin-left: 30px;
+}

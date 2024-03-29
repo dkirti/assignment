@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="txt" style="font-size: 5pt;">TEXT-GROWING</div>
+    <script>
+        fsize=parseInt(d.style.fontSize)
+        function inc()
+        {
+            fsize=fsize+1;
+            txt.innerHTML="TEXT-GROWING";
+            text.style.colr="red";
+            d.style.fontSize=fsize+"pt";
+        } 
+        if(fsize==50)
+        {
+            n2=setInterval(dec,100);
+            clearInterval(n2)
+        }
+        function dec()
+        {
+            fsize=fsize-1;
+            txt.innerHTML="TEXT-SHRINKING";
+            text.style.colr="blue";
+            d.style.fontSize=fsize+"pt";
+        }
+        if(fsize==5)
+        {
+            n1=setInterval(inc,100);
+            clearInterval(n1)
+        }
+        if(fsize==5)
+        {
+            n1=setInterval(inc,100);
+            clearInterval(n2)
+        }
+        if(fsize==5)
+        {
+            n1=setInterval(dec,100);
+            clearInterval(n3)
+        }
+    </script>
+</body>
+</html>
